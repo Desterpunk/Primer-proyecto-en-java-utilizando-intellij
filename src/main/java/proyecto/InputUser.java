@@ -1,20 +1,29 @@
 package proyecto;
 
 import java.io.*;
-import java.util.logging.*;
 
 public class InputUser {
     public static void main(String[] args) {
-        String text = "";
+        InputText inputText1 = new InputText("name");
+        System.out.println("inputText1.getText() = " + inputText1.getText());
+    }
+}
+
+class InputText {
+    java.lang.String text = "";
+
+    public InputText(String requiredInfo) {
+        System.out.println("Please enter your " + requiredInfo + ":");
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         try {
             text = bufferedReader.readLine();
         } catch (Exception e){
-            Logger loggerError = Logger.getLogger("Error reading");
-            loggerError.log(Level.WARNING, "ERROR READING THE INFORMATION");
+            System.out.println(e.getMessage());
         }
-        Logger loggerOutputName = Logger.getLogger("Output info name");
-        loggerOutputName.log(Level.INFO,"{0}",text);
+    }
+
+    public String getText() {
+        return text;
     }
 }

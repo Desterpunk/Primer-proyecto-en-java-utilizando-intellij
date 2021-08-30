@@ -4,8 +4,12 @@ import java.io.*;
 
 public class InputUser {
     public static void main(String[] args) {
-        InputText inputText1 = new InputText("name");
-        System.out.println("inputText1.getText() = " + inputText1.getText());
+        InputText userName = new InputText("Name");
+        InputText userCell = new InputText("Cellphone");
+        InputText userAge = new InputText("Age");
+
+        System.out.println("Bienvenido señor " + userName.getText() + " es un placer para nosotros contar con una persona de " +userAge.getText()+
+                " años. Próximamente nos comunicaremos con usted al numero " + userCell.getText() +".\nFeliz día;");
     }
 }
 
